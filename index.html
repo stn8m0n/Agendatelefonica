@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="b ">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda Telefônica</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+    <div class="conteiner">
+        
+        <header>
+            <img src=".\images/agenda.png" alt="Capelo e Diplomaa">
+            <h1>Agenda Telefônica</h1>
+        </header>
+        <form id="form-agenda">
+            <input type="text" id="nome-contato" required placeholder="Nome do Contato"/>
+            <input type="number" id="num_telefone" required placeholder="Número do telefone" min="10" max="12"/>
+            <button type="submit">Adicionar +</button>
+        </form>
+        <table cellspacing = "0">
+            <thead>
+                <tr>
+                    <th>Nome do Contato</th>
+                    <th>Número de Telefone</th>
+                    <!--<th>APROVADO?</th>-->
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+            <!--<tfoot>
+                <tr>
+                    <td>Média final</td>
+                    <td id = "media-final-valor">---</td>
+                    <td id="media-final-resultado">---</td>
+                </tr>
+            </tfoot>-->
+        </table>
+    </div>
+    <script src="./main.js"></script>
+</body>
+</html>
