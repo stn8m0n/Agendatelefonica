@@ -1,31 +1,28 @@
-const form = document.getElementById('form-atividade');
-const imgAprovado = '<img src="./images/aprovado.png" alt="Celebrando" />';
-const imgReprovado = '<img src="./images/reprovado.png" alt="decepcionado" />';
-const atividades = [];
-const notas = [];
-const spanAprovado ='<span class="resultado aprovado">Aprovado</span>';
-const spanReprovado ='<span class="resultado reprovado">Reprovado</span>';
-const notaMinima =  parseFloat(prompt("Digite uma nota mínima:"));
-
-
-let linhas = '';
+const form = document.getElementById('form-agenda');
+//const contato = [];
 
 form.addEventListener('submit' , function(e){
     e.preventDefault();
 
-    adicionaLinha();
-    atualizaTabela();
-    atualizaMediaFinal();
+    const inputContato = document.getElementById ('contato');
+    const inputTelefone = document.getElementById ('telefone');
 
+   // adicionaLinha();
+    //atualizaTabela();
+    let linha = '<tr>';
+    linha += `<td>${inputContato.value} </td>`;
+    linha += `<td>${inputTelefone.value} </td>`;
+    linha += '<tr>';
+
+    alert(` O Contato: ${inputContato.value} foi inserido na sua agenda!`);
 })
-
+/*
 function adicionaLinha () {
 
-    const inputNomeAtividade = document.getElementById ('nome-atividade');
-    const inputNotaAtividade = document.getElementById ('nota-atividade');
+
 
     if(atividades.includes(inputNomeAtividade.value)){
-        alert(`A atividade: ${inputNomeAtividade.value} já foi inserida anteriormente`);
+        
     } else {
 
         atividades.push(inputNomeAtividade.value);
@@ -34,8 +31,7 @@ function adicionaLinha () {
     let linha = '<tr>';
     linha += `<td>${inputNomeAtividade.value} </td>`;
     linha += `<td>${inputNotaAtividade.value} </td>`;
-    linha += `<td>${inputNotaAtividade.value > notaMinima ? imgAprovado : imgReprovado} </td>`;
-    linha += `<tr>`;
+
 
     linhas += linha;
 
@@ -51,7 +47,7 @@ function atualizaTabela (){
     corpoTabela.innerHTML = linhas;
 }
 
-/*function atualizaMediaFinal(){
+function atualizaMediaFinal(){
     const mediaFinal = calculaMediaFinal();
     
     document.getElementById('media-final-valor').innerHTML = mediaFinal.toFixed(2);
